@@ -3,9 +3,9 @@ const { ObjectId } = require('mongodb');
 //add notice
 const addNotice = (noticeCollection) => async (req, res) => {
   const data = req.body;
-  const { title, date, category, pic } = data;
+  const { title, date, category, pic, link } = data;
 
-  if (!title || !date || !category || !pic) {
+  if (!title || !date || !category || !pic || !link) {
     res.status(400).send('Please fill up all the fields!');
     return;
   }
